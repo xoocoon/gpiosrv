@@ -1,0 +1,68 @@
+{
+  "evdevName": "pi-ir-injector",
+  "gpios": {
+    "27": "QNAP_RM-IR004"
+  },
+  "irProtocols": {
+    "QNAP_RM-IR004": {
+      "baseProtocol": "RC6_MCE",
+      "address": "0x800f",
+      "irListener": {
+        "mayInject": true
+      },
+      "keys": {
+        "0x040c": {
+          "keyName": "KEY_POWER"
+        },
+        "0x045b": {
+          "keyName": "KEY_HOMEPAGE"
+        },
+        "0x040f": {
+          "keyName": "KEY_INFO"
+        },
+        "0x0411": {
+          "keyName": "KEY_VOLUMEDOWN"
+        },
+        "0x0410": {
+          "keyName": "KEY_VOLUMEUP"
+        },
+        "0x0420": {
+          "keyName": "KEY_LEFT"
+        },
+        "0x041e": {
+          "keyName": "KEY_UP"
+        },
+        "0x0421": {
+          "keyName": "KEY_RIGHT"
+        },
+        "0x041f": {
+          "keyName": "KEY_DOWN"
+        },
+        "0x0422": {
+          "keyName": "KEY_ENTER"
+        },
+        "0x0423": {
+          "keyName": "KEY_BACK"
+        },
+        "0x0426": {
+          "keyName": "KEY_MENU"
+        },
+        "0x0493": {
+          "keyName": "KEY_YELLOW"
+        },
+        "0x0491": {
+          "keyName": "KEY_RED"
+        },
+        "0x0494": {
+          "keyName": "KEY_BLUE"
+        },
+        "0x0492": {
+          "keyName": "KEY_GREEN"
+        },
+        "0x042c": {
+          "keyName": "KEY_PLAYPAUSE"
+        }
+      }
+    }
+  }
+}

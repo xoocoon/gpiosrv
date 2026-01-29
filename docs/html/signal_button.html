@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>signal_button module &mdash; gpiosvr 0.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_paramlinks.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gpiosvr
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">gpiosvr</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gpiosvr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>signal_button module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/signal_button.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-signal_button">
+<span id="signal-button-module"></span><h1>signal_button module<a class="headerlink" href="#module-signal_button" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="signal_button.ButtonConfig">
+<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonConfig</code><span class="sig-paren">(</span><em class="sig-param">buttonConfig: dict</em>, <em class="sig-param">topic='button'</em>, <em class="sig-param">protocolClass_=&lt;class 'signal_button.ButtonProtocolDescription'&gt;</em>, <em class="sig-param">listenerConfigClass_=&lt;class 'signal_button.ButtonListenerConfig'&gt;</em>, <em class="sig-param">repeatDeltaPercentage=5</em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="signal.html#gpiosvr.signal.SignalConfig" title="gpiosvr.signal.SignalConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.SignalConfig</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_button.ButtonListener">
+<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonListener</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">repeat_ms</span><span class="o">=</span><span class="default_value">80</span></em>, <em class="sig-param"><span class="n">keyUpCode</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mayInject</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">protocol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">isDebugOutput</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">isTesting</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.SignalListener</span></code></p>
+<dl class="py method">
+<dt id="signal_button.ButtonListener.createPulseEventIterator">
+<code class="sig-name descname">createPulseEventIterator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonListener.createPulseEventIterator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="signal_button.ButtonListener.describeProtocol">
+<code class="sig-name descname">describeProtocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonListener.describeProtocol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="signal_button.ButtonListener.fromConfig">
+<em class="property">static </em><code class="sig-name descname">fromConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">protocol</span></em>, <em class="sig-param"><span class="n">msgBuffer</span></em>, <em class="sig-param"><span class="n">listenerConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonListener.fromConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method for converting configuration entries to an
+instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListener</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><span class="target" id="signal_button.ButtonListener.fromConfig.params.listenerConfig"></span><strong>listenerConfig</strong><a class="paramlink headerlink reference internal" href="#signal_button.ButtonListener.fromConfig.params.listenerConfig">¶</a> (<em>object</em>) – Either a <cite>dict</cite> or an instance of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListenerConfig</span></code>. If the former, the <cite>dict</cite> keys must
+be identical to the parameter names of 
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalListenerConfig.__init__" title="gpiosvr.signal.SignalListenerConfig.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListener</span></code> instance representing the
+configuration passed in via 
+<code class="xref py py-paramref docutils literal notranslate"><span class="pre">listenerConfig</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListener</span></code></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>The same exceptions as 
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="signal_button.ButtonListener.pulseEventToKeyEvents">
+<em class="property">async </em><code class="sig-name descname">pulseEventToKeyEvents</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulseEventOrKeyCodes</span></em>, <em class="sig-param"><span class="n">debugOutput</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonListener.pulseEventToKeyEvents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_button.ButtonListenerConfig">
+<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonListenerConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">buttonListenerConfig</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonListenerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="signal.html#gpiosvr.signal.SignalListenerConfig" title="gpiosvr.signal.SignalListenerConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.SignalListenerConfig</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_button.ButtonProtocolDescription">
+<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonProtocolDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cpuDischargePause_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonProtocolDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription" title="gpiosvr.signal.SignalProtocolDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.SignalProtocolDescription</span></code></a></p>
+<dl class="py method">
+<dt id="signal_button.ButtonProtocolDescription.fromConfig">
+<em class="property">static </em><code class="sig-name descname">fromConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">protocolConfig</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonProtocolDescription.fromConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method for converting a <cite>dict</cite> to an instance of 
+<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code>.</p>
+<p>The <cite>dict</cite> entries may only contain the parameter names and values of
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription.__init__" title="gpiosvr.signal.SignalProtocolDescription.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code> instance representing the
+configuration passed in via 
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription.fromConfig.params.protocolConfig" title="gpiosvr.signal.SignalProtocolDescription.fromConfig"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">protocolConfig</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>The same exceptions as with
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription.__init__" title="gpiosvr.signal.SignalProtocolDescription.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_button.ButtonPulseEventIterator">
+<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonPulseEventIterator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">protocol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxBasePulseCount</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">isDebugOutput</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">isTesting</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonPulseEventIterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="signal.html#gpiosvr.signal.PulseEventIterator" title="gpiosvr.signal.PulseEventIterator"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.PulseEventIterator</span></code></a></p>
+<dl class="py method">
+<dt id="signal_button.ButtonPulseEventIterator.onPulseInterruption">
+<em class="property">async </em><code class="sig-name descname">onPulseInterruption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonPulseEventIterator.onPulseInterruption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal event callback for extensibility. It is called when the pulse
+sequence has been interrupted, considering the protocol.</p>
+<p>If the implementation wishes to discard the incomplete pulse sequence,
+it must return <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+If the implementation wishes to append further pulses to the incomplete
+pulse sequence, it must return <code class="docutils literal notranslate"><span class="pre">False</span></code>. This is the default.</p>
+<p>If the implementation whishes to notify coroutines iterating over
+<a class="reference internal" href="signal.html#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instances, it must call
+<code class="docutils literal notranslate"><span class="pre">self.eventQueue.put(PulsesInterrupted())</span></code> and return 
+<code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, xoocoon.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

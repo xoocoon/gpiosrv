@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pisocket module &mdash; gpiosvr 0.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_paramlinks.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gpiosvr
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">gpiosvr</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gpiosvr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pisocket module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/pisocket.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pisocket">
+<span id="pisocket-module"></span><h1>pisocket module<a class="headerlink" href="#module-pisocket" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pisocket.GpioDirection">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">GpioDirection</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.GpioDirection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="pisocket.GpioDirection.ip">
+<code class="sig-name descname">ip</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.GpioDirection.ip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioDirection.op">
+<code class="sig-name descname">op</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.GpioDirection.op" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pisocket.GpioLevel">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">GpioLevel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.GpioLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="pisocket.GpioLevel.dh">
+<code class="sig-name descname">dh</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.GpioLevel.dh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioLevel.dl">
+<code class="sig-name descname">dl</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.GpioLevel.dl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pisocket.GpioPull">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">GpioPull</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.GpioPull" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="pisocket.GpioPull.DOWN">
+<code class="sig-name descname">DOWN</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.GpioPull.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioPull.NONE">
+<code class="sig-name descname">NONE</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.GpioPull.NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioPull.UP">
+<code class="sig-name descname">UP</code><em class="property"> = 2</em><a class="headerlink" href="#pisocket.GpioPull.UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.GpioPull.getBitShiftValue">
+<code class="sig-name descname">getBitShiftValue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.GpioPull.getBitShiftValue" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioPull.pd">
+<code class="sig-name descname">pd</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.GpioPull.pd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioPull.pn">
+<code class="sig-name descname">pn</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.GpioPull.pn" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.GpioPull.pu">
+<code class="sig-name descname">pu</code><em class="property"> = 2</em><a class="headerlink" href="#pisocket.GpioPull.pu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pisocket.PiServerConnectionError">
+<em class="property">exception </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">PiServerConnectionError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">socketPath</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PiServerConnectionError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="pisocket.PiServerError">
+<em class="property">exception </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">PiServerError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">messageOrException</span></em>, <em class="sig-param"><span class="n">isFromDaemon</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PiServerError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="pisocket.PigpioSocketAdapter">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">PigpioSocketAdapter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">socketPath</span></em>, <em class="sig-param"><span class="n">clientName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">connectTimeout_ms</span><span class="o">=</span><span class="default_value">10000</span></em>, <em class="sig-param"><span class="n">responseBufferSize</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">responseTimeout_ms</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">isKeepAlive</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">pigpioPigsPath</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.checkSocketPath">
+<code class="sig-name descname">checkSocketPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.checkSocketPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.close">
+<em class="property">async </em><code class="sig-name descname">close</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cancelRunning</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.connect">
+<em class="property">async </em><code class="sig-name descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.delete_script">
+<em class="property">async </em><code class="sig-name descname">delete_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.delete_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.get_current_tick">
+<em class="property">async </em><code class="sig-name descname">get_current_tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.get_current_tick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.isClosed">
+<em class="property">async </em><code class="sig-name descname">isClosed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.isClosed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.read">
+<em class="property">async </em><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpio</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.run_script">
+<em class="property">async </em><code class="sig-name descname">run_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptId</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.run_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.script_status">
+<em class="property">async </em><code class="sig-name descname">script_status</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.script_status" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.send">
+<em class="property">async </em><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">isLazy</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">isFailFast</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.send" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.sendViaPigpioPigs">
+<em class="property">async </em><code class="sig-name descname">sendViaPigpioPigs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">command</span></em>, <em class="sig-param"><span class="n">isFailFast</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.sendViaPigpioPigs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.set_mode">
+<em class="property">async </em><code class="sig-name descname">set_mode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">mode</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.set_mode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.set_pull_up_down">
+<em class="property">async </em><code class="sig-name descname">set_pull_up_down</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">pull</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.set_pull_up_down" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.stop">
+<em class="property">async </em><code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.stop_script">
+<em class="property">async </em><code class="sig-name descname">stop_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.stop_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.store_script">
+<em class="property">async </em><code class="sig-name descname">store_script</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">script</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.store_script" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigpioSocketAdapter.write">
+<em class="property">async </em><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">level</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigpioSocketAdapter.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pisocket.PigsOutcome">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">PigsOutcome</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.ERRORS_POSTFIX">
+<code class="sig-name descname">ERRORS_POSTFIX</code><em class="property"> = '\n--'</em><a class="headerlink" href="#pisocket.PigsOutcome.ERRORS_POSTFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.ERRORS_PREFIX">
+<code class="sig-name descname">ERRORS_PREFIX</code><em class="property"> = '--ERRORS=\n'</em><a class="headerlink" href="#pisocket.PigsOutcome.ERRORS_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.ERRORS_SEPARATOR">
+<code class="sig-name descname">ERRORS_SEPARATOR</code><em class="property"> = '~~'</em><a class="headerlink" href="#pisocket.PigsOutcome.ERRORS_SEPARATOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.PI_SERVER_ERROR_ID">
+<code class="sig-name descname">PI_SERVER_ERROR_ID</code><em class="property"> = 'PiServerError'</em><a class="headerlink" href="#pisocket.PigsOutcome.PI_SERVER_ERROR_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.PI_SERVER_ERROR_PATTERN">
+<code class="sig-name descname">PI_SERVER_ERROR_PATTERN</code><em class="property"> = re.compile('^PiServerError\\(isFromDaemon\\s*=\\s(True|False)\\):\\s*(.*)', re.DOTALL)</em><a class="headerlink" href="#pisocket.PigsOutcome.PI_SERVER_ERROR_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.RESPONSE_PATTERN">
+<code class="sig-name descname">RESPONSE_PATTERN</code><em class="property"> = re.compile('(?:\\-\\-ERRORS=\\\n(.+?)\\\n\\-\\-)?(.*)', re.DOTALL)</em><a class="headerlink" href="#pisocket.PigsOutcome.RESPONSE_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsOutcome.VALUE_ERROR_ID">
+<code class="sig-name descname">VALUE_ERROR_ID</code><em class="property"> = 'ValueError'</em><a class="headerlink" href="#pisocket.PigsOutcome.VALUE_ERROR_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.allExceptions">
+<code class="sig-name descname">allExceptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.allExceptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.appendException">
+<code class="sig-name descname">appendException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">exception</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.appendException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.decode">
+<em class="property">static </em><code class="sig-name descname">decode</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.decode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.decodeExceptions">
+<em class="property">static </em><code class="sig-name descname">decodeExceptions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">errorMessages</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.decodeExceptions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.done">
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.done" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.encode">
+<code class="sig-name descname">encode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.encode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.encodeException">
+<em class="property">static </em><code class="sig-name descname">encodeException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">error</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.encodeException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.exception">
+<code class="sig-name descname">exception</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.exception" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.hasException">
+<code class="sig-name descname">hasException</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.hasException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.result">
+<code class="sig-name descname">result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.PigsOutcome.set_result">
+<code class="sig-name descname">set_result</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">result</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.PigsOutcome.set_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pisocket.PigsRequest">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">PigsRequest</code><a class="headerlink" href="#pisocket.PigsRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="pisocket.PigsRequest.ALIVE_REQUEST">
+<code class="sig-name descname">ALIVE_REQUEST</code><em class="property"> = '--ALIVE--'</em><a class="headerlink" href="#pisocket.PigsRequest.ALIVE_REQUEST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsRequest.CANCEL_REQUEST">
+<code class="sig-name descname">CANCEL_REQUEST</code><em class="property"> = '--CANCEL--'</em><a class="headerlink" href="#pisocket.PigsRequest.CANCEL_REQUEST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsRequest.CHECK_REQUEST">
+<code class="sig-name descname">CHECK_REQUEST</code><em class="property"> = '--CHECK--'</em><a class="headerlink" href="#pisocket.PigsRequest.CHECK_REQUEST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsRequest.CLOSE_REQUEST">
+<code class="sig-name descname">CLOSE_REQUEST</code><em class="property"> = '--CLOSE--'</em><a class="headerlink" href="#pisocket.PigsRequest.CLOSE_REQUEST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsRequest.NAME_REQUEST_POSTFIX">
+<code class="sig-name descname">NAME_REQUEST_POSTFIX</code><em class="property"> = '--'</em><a class="headerlink" href="#pisocket.PigsRequest.NAME_REQUEST_POSTFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.PigsRequest.NAME_REQUEST_PREFIX">
+<code class="sig-name descname">NAME_REQUEST_PREFIX</code><em class="property"> = '--NAME='</em><a class="headerlink" href="#pisocket.PigsRequest.NAME_REQUEST_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="pisocket.pigpio">
+<em class="property">class </em><code class="sig-prename descclassname">pisocket.</code><code class="sig-name descname">pigpio</code><a class="headerlink" href="#pisocket.pigpio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="pisocket.pigpio.EITHER_EDGE">
+<code class="sig-name descname">EITHER_EDGE</code><em class="property"> = 2</em><a class="headerlink" href="#pisocket.pigpio.EITHER_EDGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.FALLING_EDGE">
+<code class="sig-name descname">FALLING_EDGE</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.pigpio.FALLING_EDGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.INPUT">
+<code class="sig-name descname">INPUT</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.pigpio.INPUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.OUTPUT">
+<code class="sig-name descname">OUTPUT</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.pigpio.OUTPUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PI_SCRIPT_FAILED">
+<code class="sig-name descname">PI_SCRIPT_FAILED</code><em class="property"> = 4</em><a class="headerlink" href="#pisocket.pigpio.PI_SCRIPT_FAILED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PI_SCRIPT_HALTED">
+<code class="sig-name descname">PI_SCRIPT_HALTED</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.pigpio.PI_SCRIPT_HALTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PI_SCRIPT_INITING">
+<code class="sig-name descname">PI_SCRIPT_INITING</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.pigpio.PI_SCRIPT_INITING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PI_SCRIPT_RUNNING">
+<code class="sig-name descname">PI_SCRIPT_RUNNING</code><em class="property"> = 2</em><a class="headerlink" href="#pisocket.pigpio.PI_SCRIPT_RUNNING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PI_SCRIPT_WAITING">
+<code class="sig-name descname">PI_SCRIPT_WAITING</code><em class="property"> = 3</em><a class="headerlink" href="#pisocket.pigpio.PI_SCRIPT_WAITING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PUD_DOWN">
+<code class="sig-name descname">PUD_DOWN</code><em class="property"> = 1</em><a class="headerlink" href="#pisocket.pigpio.PUD_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PUD_OFF">
+<code class="sig-name descname">PUD_OFF</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.pigpio.PUD_OFF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.PUD_UP">
+<code class="sig-name descname">PUD_UP</code><em class="property"> = 2</em><a class="headerlink" href="#pisocket.pigpio.PUD_UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.RISING_EDGE">
+<code class="sig-name descname">RISING_EDGE</code><em class="property"> = 0</em><a class="headerlink" href="#pisocket.pigpio.RISING_EDGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="pisocket.pigpio.TIMEOUT">
+<code class="sig-name descname">TIMEOUT</code><em class="property"> = 2</em><a class="headerlink" href="#pisocket.pigpio.TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="pisocket.pigpio.tickDiff">
+<em class="property">static </em><code class="sig-name descname">tickDiff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span></em>, <em class="sig-param"><span class="n">t2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pisocket.pigpio.tickDiff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, xoocoon.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

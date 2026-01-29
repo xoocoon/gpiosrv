@@ -1,0 +1,39 @@
+{
+  "evdevName": "pi-button-injector",
+  "gpios": {
+    "2": "yellow",
+    "3": "red"
+  },
+  "buttonProtocols": {
+    "red": {
+      "preamble_ms": 75,
+      "postamble_ms": 160,
+      "tolerancePercentage": 5,
+      "debounce_μs": 60000,
+      "buttonListener": {
+        "repeat_ms": 80,
+        "keyUpCode": "0x1"
+      },
+      "keys": {
+        "0x0": {
+          "keyName": "KEY_RED"
+        }
+      }
+    },
+    "yellow": {
+      "preamble_ms": 75,
+      "postamble_ms": 160,
+      "tolerancePercentage": 5,
+      "debounce_μs": 60000,
+      "buttonListener": {
+        "repeat_ms": 80,
+        "keyUpCode": "0x1"
+      },
+      "keys": {
+        "0x0": {
+          "keyName": "KEY_YELLOW"
+        }
+      }
+    }
+  }
+}

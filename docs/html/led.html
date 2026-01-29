@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>led module &mdash; gpiosvr 0.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_paramlinks.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gpiosvr
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">gpiosvr</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gpiosvr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>led module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/led.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-led">
+<span id="led-module"></span><h1>led module<a class="headerlink" href="#module-led" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="led.BlinkstickLedControl">
+<em class="property">class </em><code class="sig-prename descclassname">led.</code><code class="sig-name descname">BlinkstickLedControl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">serial</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ledIndex</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">turnOffAfterTimeoutDefault_ms</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.BlinkstickLedControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="led.BlinkstickLedControl.close">
+<em class="property">async </em><code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#led.BlinkstickLedControl.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.BlinkstickLedControl.fromConfig">
+<em class="property">static </em><code class="sig-name descname">fromConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ledsConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.BlinkstickLedControl.fromConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.BlinkstickLedControl.setColor">
+<em class="property">async </em><code class="sig-name descname">setColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">rgbTuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.BlinkstickLedControl.setColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.BlinkstickLedControl.turnOff">
+<em class="property">async </em><code class="sig-name descname">turnOff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">leaveIfOverridden</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.BlinkstickLedControl.turnOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.BlinkstickLedControl.turnOffAfterTimeout">
+<em class="property">async </em><code class="sig-name descname">turnOffAfterTimeout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timeout_ms</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">startTimestamp_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">leaveIfOverridden</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.BlinkstickLedControl.turnOffAfterTimeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="led.LedsConfig">
+<em class="property">class </em><code class="sig-prename descclassname">led.</code><code class="sig-name descname">LedsConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ledsConfig</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.LedsConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="led.PiLedControl">
+<em class="property">class </em><code class="sig-prename descclassname">led.</code><code class="sig-name descname">PiLedControl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">redPin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">greenPin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bluePin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">turnOffAfterTimeoutDefault_ms</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ctlshell.control.PiControl</span></code></p>
+<dl class="py method">
+<dt id="led.PiLedControl.blink">
+<em class="property">async </em><code class="sig-name descname">blink</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cycleCount</span></em>, <em class="sig-param"><span class="n">interval_ms</span></em>, <em class="sig-param"><span class="n">lasting_ms</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">rgbTuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.blink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Have the LED(s) blink.</p>
+<dl class="simple">
+<dt>lasting_ms: After the blink cycles, duration of the </dt><dd><p>LED(s) remaining on in milliseconds. 
+If 0, will turn off immediately. 
+If -1, will stay on indefinitely.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.close">
+<em class="property">async </em><code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.colorToLevels">
+<code class="sig-name descname">colorToLevels</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">rgbTuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.colorToLevels" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.fromConfig">
+<em class="property">static </em><code class="sig-name descname">fromConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">ledsConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.fromConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.pinsToColor">
+<em class="property">async </em><code class="sig-name descname">pinsToColor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.pinsToColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.setColor">
+<em class="property">async </em><code class="sig-name descname">setColor</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">rgbTuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.setColor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.start">
+<em class="property">async </em><code class="sig-name descname">start</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shallResetGpio</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.storeBlinkScript">
+<em class="property">async </em><code class="sig-name descname">storeBlinkScript</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.storeBlinkScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores an LED blink script to a pigpiod or gpio_server.</p>
+<p>p0: Number of blink cycles.
+p1: Duration of one blink cycle in milliseconds.
+p2: After the blink cycles, duration of the LED(s) remaining on</p>
+<blockquote>
+<div><p>in milliseconds. 
+If 0, will turn off immediately. 
+If LEAVE_ON_MAGIC_NUMBER, will stay on indefinitely.</p>
+</div></blockquote>
+<p>p3: 1 if the red LED shall be included, else 0.
+p4: 1 if the green LED shall be included, else 0.
+p5: 1 if the blue LED shall be included, else 0.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.storeSetColorScript">
+<em class="property">async </em><code class="sig-name descname">storeSetColorScript</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.storeSetColorScript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.storeTurnOffScript">
+<em class="property">async </em><code class="sig-name descname">storeTurnOffScript</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.storeTurnOffScript" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.turnOff">
+<em class="property">async </em><code class="sig-name descname">turnOff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">leaveIfOverridden</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.turnOff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="led.PiLedControl.turnOffAfterTimeout">
+<em class="property">async </em><code class="sig-name descname">turnOffAfterTimeout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">timeout_ms</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">startTimestamp_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">leaveIfOverridden</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#led.PiLedControl.turnOffAfterTimeout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, xoocoon.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

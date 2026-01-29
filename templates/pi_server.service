@@ -1,0 +1,18 @@
+[Unit]
+Description=service translating GPIO signals into Linux kernel key events
+After=pigpiod.service
+Requires=pigpiod.service
+Conflicts=shutdown.target
+
+[Service]
+Environment="MY_PI_UID=${PI_UID}"
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=99
+RuntimeDirectory=pi
+Type=notify
+ExecStart=/usr/local/bin/gpiosrv/gpio_server.py --buttondebug --signaldebug --log=/var/log/pi.log --errors=5 --buttonconfig=pi_buttonkey_config.json --signalconfig=pi_sigkey_config.json /var/run/pi/pi-${MY_PI_UID}.sock
+ExecStartPost=/usr/bin/ln -s /var/run/pi/pi-${MY_PI_UID}.sock /var/run/pi/pi.sock
+Restart=no
+
+[Install]
+WantedBy=pigpiod.service

@@ -1,0 +1,2 @@
+# Insert ID_SERIAL_SHORT of the Pico, obtained by 'udevadm info /dev/ttyACM0'.
+ACTION==add", ATTRS{serial}==0123456789ABCDEF", TAG+="systemd", ENV{SYSTEMD_WANTS}+="pico_server.service"

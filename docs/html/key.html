@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>key module &mdash; gpiosvr 0.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_paramlinks.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gpiosvr
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">gpiosvr</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gpiosvr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>key module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/key.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-key">
+<span id="key-module"></span><h1>key module<a class="headerlink" href="#module-key" title="Permalink to this headline">¶</a></h1>
+<dl class="py exception">
+<dt id="key.InputDeviceError">
+<em class="property">exception </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">InputDeviceError</code><a class="headerlink" href="#key.InputDeviceError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.KeyDescription">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">KeyDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyCode</span></em>, <em class="sig-param"><span class="n">keyDescription</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="key.KeyDescription.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyDescription.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.KeyEvent">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">KeyEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">keyCode</span></em>, <em class="sig-param"><span class="n">keyNames</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">signalName</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timestamp</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="key.KeyEvent.DOWN">
+<code class="sig-name descname">DOWN</code><em class="property"> = 1</em><a class="headerlink" href="#key.KeyEvent.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="key.KeyEvent.UP">
+<code class="sig-name descname">UP</code><em class="property"> = 0</em><a class="headerlink" href="#key.KeyEvent.UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.KeyEventListener">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">KeyEventListener</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eventDeviceName</span></em>, <em class="sig-param"><span class="n">eventDeviceWaitTimeout_ms</span><span class="o">=</span><span class="default_value">5000</span></em>, <em class="sig-param"><span class="n">eventDeviceCheckingInterval_ms</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">isGrabInputDevice</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cancelCheckingInterval_ms</span><span class="o">=</span><span class="default_value">100</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="key.KeyEventListener.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventListener.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventListener.waitForKeyEvents">
+<code class="sig-name descname">waitForKeyEvents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventListener.waitForKeyEvents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.KeyEventServer">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">KeyEventServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">taskMonitor</span></em>, <em class="sig-param"><span class="n">keysConfig</span></em>, <em class="sig-param"><span class="n">ledControl</span></em>, <em class="sig-param"><span class="n">eventDeviceName</span></em>, <em class="sig-param"><span class="n">eventDeviceWaitTimeout_ms</span><span class="o">=</span><span class="default_value">5000</span></em>, <em class="sig-param"><span class="n">eventDeviceCheckingInterval_ms</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">isGrabInputDevice</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cancelCheckingInterval_ms</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">maxErrorCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">altConfig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py class">
+<dt id="key.KeyEventServer.AltSignal">
+<em class="property">class </em><code class="sig-name descname">AltSignal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.AltSignal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="key.KeyEventServer.AltSignal.OFF">
+<code class="sig-name descname">OFF</code><em class="property"> = 'ALT_OFF'</em><a class="headerlink" href="#key.KeyEventServer.AltSignal.OFF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="key.KeyEventServer.AltSignal.ON">
+<code class="sig-name descname">ON</code><em class="property"> = 'ALT_ON'</em><a class="headerlink" href="#key.KeyEventServer.AltSignal.ON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="key.KeyEventServer.AltSignal.TOGGLE">
+<code class="sig-name descname">TOGGLE</code><em class="property"> = 'ALT_TOGGLE'</em><a class="headerlink" href="#key.KeyEventServer.AltSignal.TOGGLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventServer.blinkLed">
+<em class="property">async </em><code class="sig-name descname">blinkLed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyEvent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.blinkLed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventServer.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventServer.handleKeyEvent">
+<em class="property">async </em><code class="sig-name descname">handleKeyEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyEvent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.handleKeyEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventServer.serve_forever">
+<em class="property">async </em><code class="sig-name descname">serve_forever</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.serve_forever" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventServer.turnOffLed">
+<em class="property">async </em><code class="sig-name descname">turnOffLed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyEvent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.turnOffLed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeyEventServer.turnOnLed">
+<em class="property">async </em><code class="sig-name descname">turnOnLed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyEvent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyEventServer.turnOnLed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.KeyType">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">KeyType</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeyType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="key.KeyType.ALT">
+<code class="sig-name descname">ALT</code><em class="property"> = 'alt'</em><a class="headerlink" href="#key.KeyType.ALT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="key.KeyType.NORMAL">
+<code class="sig-name descname">NORMAL</code><em class="property"> = 'normal'</em><a class="headerlink" href="#key.KeyType.NORMAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.KeysConfig">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">KeysConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keysConfig</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeysConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<dl class="py method">
+<dt id="key.KeysConfig.close">
+<code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#key.KeysConfig.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeysConfig.getKeyDescriptionForEvent">
+<code class="sig-name descname">getKeyDescriptionForEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyEvent</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#key.KeyEvent" title="key.KeyEvent">key.KeyEvent</a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeysConfig.getKeyDescriptionForEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeysConfig.getKeyDescriptionForSignal">
+<code class="sig-name descname">getKeyDescriptionForSignal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">signalName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeysConfig.getKeyDescriptionForSignal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="key.KeysConfig.getUInputEventsDict">
+<code class="sig-name descname">getUInputEventsDict</code><span class="sig-paren">(</span><em class="sig-param">type: key.KeyType = &lt;KeyType.NORMAL: 'normal'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#key.KeysConfig.getUInputEventsDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="key.ProcessExecutingKeyEventServer">
+<em class="property">class </em><code class="sig-prename descclassname">key.</code><code class="sig-name descname">ProcessExecutingKeyEventServer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">taskMonitor</span></em>, <em class="sig-param"><span class="n">processExecutor</span></em>, <em class="sig-param"><span class="n">keysConfig</span></em>, <em class="sig-param"><span class="n">ledControl</span></em>, <em class="sig-param"><span class="n">eventDeviceName</span></em>, <em class="sig-param"><span class="n">isGrabInputDevice</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">maxErrorCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">altConfig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.ProcessExecutingKeyEventServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#key.KeyEventServer" title="key.KeyEventServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">key.KeyEventServer</span></code></a></p>
+<dl class="py method">
+<dt id="key.ProcessExecutingKeyEventServer.handleKeyEvent">
+<em class="property">async </em><code class="sig-name descname">handleKeyEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keyEvent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#key.ProcessExecutingKeyEventServer.handleKeyEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, xoocoon.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

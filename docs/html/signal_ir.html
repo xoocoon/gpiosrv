@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>signal_ir module &mdash; gpiosvr 0.9 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinx_paramlinks.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> gpiosvr
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">gpiosvr</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gpiosvr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>signal_ir module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/signal_ir.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-signal_ir">
+<span id="signal-ir-module"></span><h1>signal_ir module<a class="headerlink" href="#module-signal_ir" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="signal_ir.IrConfig">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrConfig</code><span class="sig-paren">(</span><em class="sig-param">buttonConfig: dict</em>, <em class="sig-param">topic='button'</em>, <em class="sig-param">protocolClass_=&lt;class 'gpiosvr.signal_button.ButtonProtocolDescription'&gt;</em>, <em class="sig-param">listenerConfigClass_=&lt;class 'gpiosvr.signal_button.ButtonListenerConfig'&gt;</em>, <em class="sig-param">repeatDeltaPercentage=5</em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal_button.ButtonConfig</span></code></p>
+<p>Alias for ButtonConfig to comply with naming conventions for auto-initiation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_ir.IrListener">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrListener</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">repeat_ms</span><span class="o">=</span><span class="default_value">80</span></em>, <em class="sig-param"><span class="n">mayInject</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">protocol</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="#signal_ir.IrProtocolDescription" title="signal_ir.IrProtocolDescription">signal_ir.IrProtocolDescription</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">isDebugOutput</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">isTesting</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrListener" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal_button.ButtonListener</span></code></p>
+<dl class="py method">
+<dt id="signal_ir.IrListener.describeProtocol">
+<code class="sig-name descname">describeProtocol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrListener.describeProtocol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="signal_ir.IrListener.fromConfig">
+<em class="property">static </em><code class="sig-name descname">fromConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">protocol</span></em>, <em class="sig-param"><span class="n">msgBuffer</span></em>, <em class="sig-param"><span class="n">listenerConfig</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrListener.fromConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method for converting configuration entries to an
+instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListener</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><span class="target" id="signal_ir.IrListener.fromConfig.params.listenerConfig"></span><strong>listenerConfig</strong><a class="paramlink headerlink reference internal" href="#signal_ir.IrListener.fromConfig.params.listenerConfig">¶</a> (<em>object</em>) – Either a <cite>dict</cite> or an instance of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListenerConfig</span></code>. If the former, the <cite>dict</cite> keys must
+be identical to the parameter names of 
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalListenerConfig.__init__" title="gpiosvr.signal.SignalListenerConfig.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListener</span></code> instance representing the
+configuration passed in via 
+<code class="xref py py-paramref docutils literal notranslate"><span class="pre">listenerConfig</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalListener</span></code></p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p>The same exceptions as 
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="signal_ir.IrListener.pulseEventToKeyEvents">
+<em class="property">async </em><code class="sig-name descname">pulseEventToKeyEvents</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulseEventOrKeyCode</span></em>, <em class="sig-param"><span class="n">debugOutput</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrListener.pulseEventToKeyEvents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_ir.IrListenerConfig">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrListenerConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">buttonListenerConfig</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrListenerConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal_button.ButtonListenerConfig</span></code></p>
+<p>Alias for ButtonListenerConfig to comply with naming conventions for auto-initiation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_ir.IrProtocol">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrProtocol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrProtocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="signal_ir.IrProtocol.GENERIC">
+<code class="sig-name descname">GENERIC</code><em class="property"> = &lt;signal_ir.IrProtocolDescription object&gt;</em><a class="headerlink" href="#signal_ir.IrProtocol.GENERIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="signal_ir.IrProtocol.NEC">
+<code class="sig-name descname">NEC</code><em class="property"> = &lt;signal_ir.IrProtocolDescription object&gt;</em><a class="headerlink" href="#signal_ir.IrProtocol.NEC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="signal_ir.IrProtocol.NEC_Acer">
+<code class="sig-name descname">NEC_Acer</code><em class="property"> = &lt;signal_ir.IrProtocolDescription object&gt;</em><a class="headerlink" href="#signal_ir.IrProtocol.NEC_Acer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="signal_ir.IrProtocol.RC6">
+<code class="sig-name descname">RC6</code><em class="property"> = &lt;signal_ir.IrProtocolDescription object&gt;</em><a class="headerlink" href="#signal_ir.IrProtocol.RC6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="signal_ir.IrProtocol.RC6_MCE">
+<code class="sig-name descname">RC6_MCE</code><em class="property"> = &lt;signal_ir.IrProtocolDescription object&gt;</em><a class="headerlink" href="#signal_ir.IrProtocol.RC6_MCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_ir.IrProtocolDescription">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrProtocolDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulse_μs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">addressBitCount</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">codeBitCount</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">bitOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">hasCheckBits</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">cpuDischargePause_ms</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">tolerancePercentage</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">carrierHertz</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">dutyCyclePercentageOptions</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrProtocolDescription" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription" title="gpiosvr.signal.SignalProtocolDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.SignalProtocolDescription</span></code></a></p>
+<dl class="py method">
+<dt id="signal_ir.IrProtocolDescription.fromConfig">
+<em class="property">static </em><code class="sig-name descname">fromConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">irProtocolConfig</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrProtocolDescription.fromConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method for converting a <cite>dict</cite> to an instance of 
+<code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code>.</p>
+<p>The <cite>dict</cite> entries may only contain the parameter names and values of
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription.__init__" title="gpiosvr.signal.SignalProtocolDescription.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code> instance representing the
+configuration passed in via 
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription.fromConfig.params.protocolConfig" title="gpiosvr.signal.SignalProtocolDescription.fromConfig"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">protocolConfig</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code></p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p>The same exceptions as with
+<a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription.__init__" title="gpiosvr.signal.SignalProtocolDescription.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_ir.IrPulse">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrPulse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrPulse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="signal_ir.IrPulse.MARK">
+<code class="sig-name descname">MARK</code><em class="property"> = 1</em><a class="headerlink" href="#signal_ir.IrPulse.MARK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="signal_ir.IrPulse.SPACE">
+<code class="sig-name descname">SPACE</code><em class="property"> = 0</em><a class="headerlink" href="#signal_ir.IrPulse.SPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="signal_ir.IrRc6Helper">
+<em class="property">class </em><code class="sig-prename descclassname">signal_ir.</code><code class="sig-name descname">IrRc6Helper</code><a class="headerlink" href="#signal_ir.IrRc6Helper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="signal_ir.IrRc6Helper.RC6_MCE_MODE_ID">
+<code class="sig-name descname">RC6_MCE_MODE_ID</code><em class="property"> = 6</em><a class="headerlink" href="#signal_ir.IrRc6Helper.RC6_MCE_MODE_ID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="signal_ir.IrRc6Helper.getCodeHex">
+<em class="property">static </em><code class="sig-name descname">getCodeHex</code><span class="sig-paren">(</span><em class="sig-param">pulses_μs</em>, <em class="sig-param">tolerancePercentage=0</em>, <em class="sig-param">addressBitCount=8</em>, <em class="sig-param">codeBitCount=8</em>, <em class="sig-param">bitOrder=&lt;BitOrder.MSB_FIRST: 1&gt;</em>, <em class="sig-param">shallReturnToggleBit=False</em>, <em class="sig-param">debugOutput=None</em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrRc6Helper.getCodeHex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="signal_ir.IrRc6Helper.getMarkSpaceSequence">
+<em class="property">static </em><code class="sig-name descname">getMarkSpaceSequence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulses_μs</span></em>, <em class="sig-param"><span class="n">basePulse_μs</span><span class="o">=</span><span class="default_value">444</span></em>, <em class="sig-param"><span class="n">tolerancePercentage</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_ir.IrRc6Helper.getMarkSpaceSequence" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2026, xoocoon.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

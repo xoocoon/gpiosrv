@@ -1,0 +1,19 @@
+[Unit]
+Description=service translating GPIO signals into Linux kernel key events
+DefaultDependencies=no
+Before=shutdown.target
+Conflicts=shutdown.target
+
+[Service]
+CPUSchedulingPolicy=rr
+CPUSchedulingPriority=99
+Nice=-20
+RuntimeDirectory=pico
+Type=notify
+Environment="MY_PICO_UID=81985529216486895"
+ExecStart=/usr/local/bin/gpiosrv/gpio_server.py --picouid=${MY_PICO_UID} --signaldebug --log=/var/log/pico.log --errors=5 --irconfig=pico_irkey_config.json --signalconfig=pico_sigkey_config.json --delay=5000 /var/run/pico/pico-${MY_PICO_UID}.sock
+ExecStartPost=/usr/bin/ln -s /var/run/pico/pico-${MY_PICO_UID}.sock /var/run/pico/pi.sock
+TimeoutSec=60
+Restart=on-failure
+RestartMode=direct
+RestartSec=1

@@ -1,0 +1,158 @@
+{
+  "leds": {
+    "redGpio": 14,
+    "greenGpio": 15,
+    "blueGpio": 16,
+    "turnOffAfterTimeout_ms": 300
+  },
+  "keys": {
+    "longPressRepeatCount": 8,
+    "KEY_POWER": {
+      "shortPressCommands": [
+        [
+          "/usr/local/bin/mediacenter",
+          "toggle"
+        ]
+      ],
+      "pcRcEndpoint": "OFF"
+    },
+    "KEY_HOMEPAGE": {
+      "pcRcEndpoint": "HOME",
+      "ledColor": "cyan"
+    },
+    "KEY_INFO": {
+      "pcRcEndpoint": "INFO",
+      "ledColor": "cyan"
+    },
+    "KEY_VOLUMEDOWN": {
+      "shortPressCommands": [
+        [
+          "/usr/bin/curl",
+          "-s",
+          "http://mediareceiver/setVolume?volume=down&step=1"
+        ]
+      ],
+      "ledColor": "magenta",
+      "isRepeatable": true,
+      "altKeyName": "KEY_F9"
+    },
+    "KEY_VOLUMEUP": {
+      "shortPressCommands": [
+        [
+          "/usr/bin/curl",
+          "-s",
+          "http://mediareceiver/setVolume?volume=up&step=1"
+        ]
+      ],
+      "ledColor": "magenta",
+      "isRepeatable": true,
+      "altKeyName": "KEY_F10"
+    },
+    "KEY_LEFT": {
+      "pcRcEndpoint": "LEFT",
+      "ledColor": "cyan",
+      "isRepeatable": true
+    },
+    "KEY_UP": {
+      "pcRcEndpoint": "UP",
+      "ledColor": "cyan",
+      "isRepeatable": true
+    },
+    "KEY_RIGHT": {
+      "pcRcEndpoint": "RIGHT",
+      "ledColor": "cyan",
+      "isRepeatable": true
+    },
+    "KEY_DOWN": {
+      "pcRcEndpoint": "DOWN",
+      "ledColor": "cyan",
+      "isRepeatable": true
+    },
+    "KEY_OK": {
+      "pcRcEndpoint": "ENTER",
+      "ledColor": "cyan"
+    },
+    "KEY_BACK": {
+      "pcRcEndpoint": "ESC",
+      "ledColor": "cyan"
+    },
+    "KEY_MENU": {
+      "pcRcEndpoint": "MENU",
+      "ledColor": "cyan"
+    },
+    "KEY_YELLOW": {
+      "shortPressCommands": [
+        [
+          "/usr/local/bin/lightcontrol",
+          "fade-min"
+        ]
+      ],
+      "longPressCommands": [
+        [
+          "/usr/local/bin/lightcontrol",
+          "fade-max"
+        ]
+      ],
+      "onFailureCommands": [
+        [
+          "/usr/local/bin/relaycontrol",
+          "toggle",
+          "4"
+        ]
+      ],
+      "ledColor": "yellow"
+    },
+    "KEY_BLUE": {
+      "shortPressCommands": [
+        [
+          "/usr/local/bin/screencontrol",
+          "roll-up"
+        ]
+      ],
+      "longPressCommands": [
+        [
+          "/usr/local/bin/screencontrol",
+          "roll-down"
+        ]
+      ],
+      "ledColor": "blue"
+    },
+    "KEY_GREEN": {
+      "shortPressCommands": [
+        [
+          "/usr/local/bin/mediacenter",
+          "mode-next"
+        ]
+      ]
+    },
+    "KEY_PLAYPAUSE": {
+      "pcRcEndpoint": "PLAY_PAUSE",
+      "ledColor": "cyan"
+    }
+  },
+  "altKeyConfig": {
+    "evdevName": "mediacenter-ir-injector",
+    "toggleKey": {
+      "KEY_ATTENDANT_TOGGLE": {
+        "ledColor": "magenta"
+      }
+    },
+    "offKey": {
+      "KEY_ATTENDANT_OFF": {
+        "ledColor": "magenta"
+      }
+    },
+    "onKey": {
+      "KEY_ATTENDANT_ON": {
+        "ledColor": "magenta"
+      }
+    }
+  },
+  "rcConfig": {
+    "rcPort": 6450,
+    "rcHosts": [
+      "my-pc",
+      "other-pc"
+    ]
+  }
+}

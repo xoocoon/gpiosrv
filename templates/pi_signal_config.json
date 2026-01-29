@@ -1,0 +1,23 @@
+{
+  "evdevName": "pi-sig-injector",
+  "gpios": {
+    "12": "light"
+  },
+  "signalProtocols": {
+    "light": {
+      "edgeTargetCount": 1,
+      "codeStartBit": "GPIO_LEVEL",
+      "preamble_ms": 75,
+      "postamble_ms": 75,
+      "minPulseCheckInterval_ms": 0,
+      "keys": {
+        "0x0": {
+          "keyName": "KEY_BRIGHTNESSUP"
+        },
+        "0x1": {
+          "keyName": "KEY_BRIGHTNESSDOWN"
+        }
+      }
+    }
+  }
+}
