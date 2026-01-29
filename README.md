@@ -9,7 +9,7 @@ For a minimal setup, one central instance of `gpio_server.py` running on a Linux
 
 Since *gpiosvr* is based on asyncio, and asyncio in turn is backed by a C implementation in CPython, the processing runs fast enough for most use cases, even on single board computers.
 
-For apidocs, see [https://xoocoon.github.io/gpiosvr](https://xoocoon.github.io/gpiosvr/).
+For apidocs, see [https://xoocoon.github.io/gpiosvr](https://xoocoon.github.io/gpiosvr/html/).
 
 ## Signal definition language
 
@@ -24,7 +24,7 @@ Various signal transmitters can be used with a `gpio_server.py` instance. For tr
   "signalProtocols": {
     "door-bell": {
       "basePulse_μs": 9000,
-      "lengthTarget_basePulseCount": 5,
+      "basePulseCount": 5,
       "codeStartBit": 1,
       "preamble_ms": 10,
       "postamble_ms": 12,
@@ -83,7 +83,7 @@ More complete examples are included in the repo under `templates/`:
 - `pico_signal_button_config.json` includes an example for translating push button presses, including repeated key events as long as a button is held down.
 - `pi_signal_ir_config.json` includes an example for mapping the hex codes produced by a RC6_MCE IR handler to key names.
 
-For a reference of supported configuration keys, please see the documentation of the [signal](https://xoocoon.github.io/gpiosvr/signal.html#configuration-classes) module.
+For a reference of supported configuration keys, please see the documentation of the [signal](https://xoocoon.github.io/gpiosvr/html/signal.html#configuration-classes) module.
 
 ## Key definitions
 
@@ -125,7 +125,7 @@ More complete examples are included in the repo under `templates/`:
 
 - `key_rc6-mce_config.json` includes an example for controlling a home theater installation via an IR remote control.
 
-For a reference of supported configuration keys, please see the documentation of the [key](https://xoocoon.github.io/gpiosvr/key.html#configuration-classes) module.
+For a reference of supported configuration keys, please see the documentation of the [key](https://xoocoon.github.io/gpiosvr/html/key.html#configuration-classes) module.
 
 # Installation
 
