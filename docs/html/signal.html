@@ -196,7 +196,7 @@ extensibility mechanism. Existing extensions are:</p>
 protocols, signal listeners and GPIO mappings. They can be easily initialized
 with <cite>dict</cite> instances, e.g. read from JSON files.</p>
 <p>Auto-discovering and parsing JSON files are out of scope for
-<a class="reference internal" href="#module-gpiosvr.signal" title="gpiosvr.signal"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpiosvr.signal</span></code></a>. See the <code class="xref py py-mod docutils literal notranslate"><span class="pre">ctlshell</span></code> package instead.
+<a class="reference internal" href="#module-gpiosvr.signal" title="gpiosvr.signal"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpiosvr.signal</span></code></a>. See the <code class="xref py py-mod docutils literal notranslate"><span class="pre">appbase</span></code> package instead.
 The following is a sample JSON representation of a signal configuration:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;evdevName&quot;</span><span class="p">:</span> <span class="s2">&quot;pi-sig-injector&quot;</span><span class="p">,</span>
@@ -290,10 +290,10 @@ instance. Defaults to <a class="reference internal" href="#gpiosvr.signal.Signal
 
 <dl class="py class">
 <dt id="gpiosvr.signal.SignalProtocolDescription">
-<em class="property">class </em><code class="sig-prename descclassname">gpiosvr.signal.</code><code class="sig-name descname">SignalProtocolDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulse_μs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tolerancePercentage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minEdgeCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulseCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">bitOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cpuDischargePause_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.SignalProtocolDescription" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">gpiosvr.signal.</code><code class="sig-name descname">SignalProtocolDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulse_μs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tolerancePercentage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minEdgeCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulseCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">bitOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edgeEvaluationInterval_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.SignalProtocolDescription" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="gpiosvr.signal.SignalProtocolDescription.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulse_μs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tolerancePercentage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minEdgeCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulseCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">bitOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cpuDischargePause_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.SignalProtocolDescription.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulse_μs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tolerancePercentage</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">minEdgeCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basePulseCount</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">bitOrder</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edgeEvaluationInterval_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.SignalProtocolDescription.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parameters describing a signal protocol, i.e. the expected pulses or
 edges and how to translate them to hex codes. The hex codes can be
 mapped to Linux key names in the scope of <a class="reference internal" href="#gpiosvr.signal.SignalConfig" title="gpiosvr.signal.SignalConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalConfig</span></code></a>.</p>
@@ -356,9 +356,13 @@ a logical bit sequence of <code class="docutils literal notranslate"><span class
 code <code class="docutils literal notranslate"><span class="pre">0x4d</span></code> if the bit order is <a class="reference internal" href="#gpiosvr.signal.BitOrder.MSB_FIRST" title="gpiosvr.signal.BitOrder.MSB_FIRST"><code class="xref py py-data docutils literal notranslate"><span class="pre">MSB_FIRST</span></code></a>. 
 By contrast, it will be translated to <code class="docutils literal notranslate"><span class="pre">0x59</span></code>, if the bit order 
 is <a class="reference internal" href="#gpiosvr.signal.BitOrder.LSB_FIRST" title="gpiosvr.signal.BitOrder.LSB_FIRST"><code class="xref py py-data docutils literal notranslate"><span class="pre">LSB_FIRST</span></code></a>. Defaults to <a class="reference internal" href="#gpiosvr.signal.BIT_ORDER_DEFAULT" title="gpiosvr.signal.BIT_ORDER_DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">BIT_ORDER_DEFAULT</span></code></a>.</p></li>
-<li><p><span class="target" id="gpiosvr.signal.SignalProtocolDescription.params.cpuDischargePause_ms"></span><strong>cpuDischargePause_ms</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.signal.SignalProtocolDescription.params.cpuDischargePause_ms">¶</a> (<em>int</em><em>, </em><em>optional</em>) – The duration in milliseconds for regularly
-pausing the detection of new edges. A lower value decreases the delay 
-after which a hex code is produced but results in a higher CPU load.</p></li>
+<li><p><span class="target" id="gpiosvr.signal.SignalProtocolDescription.params.edgeEvaluationInterval_ms"></span><strong>edgeEvaluationInterval_ms</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.signal.SignalProtocolDescription.params.edgeEvaluationInterval_ms">¶</a> (<em>int</em><em>, </em><em>optional</em>) – The interval in milliseconds in which
+queued edges are evaluated as fixed or variable-length pulses or 
+individual edges. 
+For bursts of pulses, the value must be high enough to completely
+queue all edges before evaluating them. However, if too long, the 
+decoding into logical bits and translating them to a hex code could
+be perceptibly delayed. Lower values result in higher CPU load.</p></li>
 <li><p><span class="target" id="gpiosvr.signal.SignalProtocolDescription.params.debounce_μs"></span><strong>debounce_μs</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.signal.SignalProtocolDescription.params.debounce_μs">¶</a> (<em>int</em><em>, </em><em>optional</em>) – The time span in microseconds, within which two 
 edges shall be ignored. Useful e.g. for hardware buttons that may
 produce high-frequency edges due to mechanical bouncing.
@@ -439,30 +443,73 @@ Always implies <code class="docutils literal notranslate"><span class="pre">isDe
 <dl class="py class">
 <dt id="gpiosvr.signal.PulseEvent">
 <em class="property">class </em><code class="sig-prename descclassname">gpiosvr.signal.</code><code class="sig-name descname">PulseEvent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulses_μs</span><span class="p">:</span> <span class="n">list</span></em>, <em class="sig-param"><span class="n">pulseStartLevel</span></em>, <em class="sig-param"><span class="n">timestamp_μs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulseEvent" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Represents a completed pulse sequence.</p>
+</dd></dl>
 
 <dl class="py class">
 <dt id="gpiosvr.signal.PulsesInterrupted">
 <em class="property">class </em><code class="sig-prename descclassname">gpiosvr.signal.</code><code class="sig-name descname">PulsesInterrupted</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pulses_μs</span><span class="o">=</span><span class="default_value">()</span></em>, <em class="sig-param"><span class="n">pulseStartLevel</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">timestamp_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulsesInterrupted" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.PulseEvent</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Represents an incompleted pulse sequence, i.e. some interruption to a
+pulse sequence.</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="gpiosvr.signal.PulseEventIterator">
 <em class="property">class </em><code class="sig-prename descclassname">gpiosvr.signal.</code><code class="sig-name descname">PulseEventIterator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">protocol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxBasePulseCount</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">isDebugOutput</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">isTesting</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulseEventIterator" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
+<dd><p>An async iterator over pulse events, based on a signal protocol.</p>
+<p>It is the core class that receives edge callbacks and evaluates them based 
+on the <a class="reference internal" href="#gpiosvr.signal.SignalProtocolDescription" title="gpiosvr.signal.SignalProtocolDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalProtocolDescription</span></code></a> instance passed to the 
+constructor. The iterator yields instances of <a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> that can
+be interpreted as signals, decoded into logical bits and translated to hex 
+codes.</p>
+<p>The iterator lazily sets up the edge callback with its <cite>pi</cite> instance once
+the <code class="xref py py-meth docutils literal notranslate"><span class="pre">__anext__()</span></code> method is called for the first
+time. Once started, the iterator runs indefinitely, until 
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">aclose()</span></code> is called.</p>
+<dl class="py method">
+<dt id="gpiosvr.signal.PulseEventIterator.onArtificialEdge">
+<em class="property">async </em><code class="sig-name descname">onArtificialEdge</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulseEventIterator.onArtificialEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal event callback. It is called when an outside requestor has
+triggered an artificial edge via 
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">provokeArtificialEdge()</span></code>.</p>
+<p>The implementation is expected to put a corresponding 
+<a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instance into the event queue, then return 
+<code class="docutils literal notranslate"><span class="pre">True</span></code> to show that the event has been handled.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="gpiosvr.signal.PulseEventIterator.onPulseInterruption">
 <em class="property">async </em><code class="sig-name descname">onPulseInterruption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulseEventIterator.onPulseInterruption" title="Permalink to this definition">¶</a></dt>
-<dd><p>Internal event callback for extensibility. It is called when the pulse
-sequence has been interrupted, considering the protocol.</p>
+<dd><p>Internal event callback.. It is called when the pulse sequence has
+been interrupted, considering the protocol.</p>
 <p>If the implementation wishes to discard the incomplete pulse sequence,
 it must return <code class="docutils literal notranslate"><span class="pre">True</span></code>.
 If the implementation wishes to append further pulses to the incomplete
 pulse sequence, it must return <code class="docutils literal notranslate"><span class="pre">False</span></code>. This is the default.</p>
 <p>If the implementation whishes to notify coroutines iterating over
-<a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instances, it must call
-<code class="docutils literal notranslate"><span class="pre">self.eventQueue.put(PulsesInterrupted())</span></code> and return 
-<code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instances, it must put an instance of
+<a class="reference internal" href="#gpiosvr.signal.PulsesInterrupted" title="gpiosvr.signal.PulsesInterrupted"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulsesInterrupted</span></code></a> into the event queue, then return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.signal.PulseEventIterator.onSequenceEnd">
+<em class="property">async </em><code class="sig-name descname">onSequenceEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulseEventIterator.onSequenceEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal event callback. It is called when the pulse sequence has
+completed, considering the protocol.</p>
+<p>The implementation is expected to put a corresponding 
+<a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instance into the event queue, then return 
+<code class="docutils literal notranslate"><span class="pre">True</span></code> to show that the event has been handled.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.signal.PulseEventIterator.onSingleEdge">
+<em class="property">async </em><code class="sig-name descname">onSingleEdge</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.signal.PulseEventIterator.onSingleEdge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Internal event callback. It is called when the protocol aims at 
+single edges and a corresponding edge has occurred.</p>
+<p>The implementation is expected to put a corresponding 
+<a class="reference internal" href="#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instance into the event queue, then return 
+<code class="docutils literal notranslate"><span class="pre">True</span></code> to show that the event has been handled.</p>
 </dd></dl>
 
 </dd></dl>

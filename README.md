@@ -133,7 +133,7 @@ For a reference of supported configuration keys, please see the documentation of
 
 The following packages need to be installed:
 
-- [ctlshell](https://github.com/xoocoon/ctlshell) package
+- [appbase](https://github.com/xoocoon/appbase) package
 - [pigpio](https://abyz.me.uk/rpi/pigpio/download.html), if *pigpiod* shall be used as a backend for Raspberry Pi up to 4B
 - [libgpiod](https://libgpiod.readthedocs.io/en/latest/python_api.html) package, if *libgpiod* shall be used as a backend for Raspberry Pi up to 5B – **Not yet integrated.**
 - [evdev](https://pypi.org/project/evdev) package, for handling key events

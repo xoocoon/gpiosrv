@@ -300,14 +300,13 @@ waits for the response synchronously if
 <a class="reference internal" href="#gpiosvr.picossa.PicoModem.sendRequest.params.reply" title="gpiosvr.picossa.PicoModem.sendRequest"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">reply</span></code></a> is <code class="xref py py-data docutils literal notranslate"><span class="pre">NOW</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A <cite>tuple</cite> of the processing <a class="reference internal" href="#gpiosvr.picossa.Status" title="gpiosvr.picossa.Status"><code class="xref py py-class docutils literal notranslate"><span class="pre">Status</span></code></a> and the actual
-response value from the <cite>picod</cite> daemon.
-If the request does not complete within 
-<a class="reference internal" href="#gpiosvr.picossa.PicoModem.params.responseTimeout_ms" title="gpiosvr.picossa.PicoModem"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">responseTimeout_ms</span></code></a> milliseconds, a
+<dd class="field-odd"><p>A <cite>tuple</cite> of the processing status and the actual response
+value from the <cite>picod</cite> daemon. If the request does not complete 
+within <a class="reference internal" href="#gpiosvr.picossa.PicoModem.params.responseTimeout_ms" title="gpiosvr.picossa.PicoModem"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">responseTimeout_ms</span></code></a> milliseconds, a
 <code class="xref py py-data docutils literal notranslate"><span class="pre">TIMED_OUT</span></code> status is returned.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>tuple</p>
+<dd class="field-even"><p>tuple(<a class="reference internal" href="#gpiosvr.picossa.Status" title="gpiosvr.picossa.Status"><code class="xref py py-class docutils literal notranslate"><span class="pre">Status</span></code></a>, bytes)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -459,7 +458,7 @@ for communicating with the <cite>picod</cite> daemon on the connected Pico devic
 
 <dl class="py method">
 <dt id="gpiosvr.picossa.PicoSerialAdapter.gpioToGpioPullBitmask">
-<em class="property">static </em><code class="sig-name descname">gpioToGpioPullBitmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">pull</span><span class="p">:</span> <span class="n">gpiosvr.pisocket.GpioPull</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa.PicoSerialAdapter.gpioToGpioPullBitmask" title="Permalink to this definition">¶</a></dt>
+<em class="property">static </em><code class="sig-name descname">gpioToGpioPullBitmask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpio</span></em>, <em class="sig-param"><span class="n">pull</span><span class="p">:</span> <span class="n">gpiosvr.client.GpioPull</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa.PicoSerialAdapter.gpioToGpioPullBitmask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Helper method for creating a bit mask specifying the pull values for
 a sequence of GPIOs. Needed for communicating with the <cite>picod</cite> daemon 
 on the connected Pico device.</p>
@@ -476,6 +475,20 @@ same pull value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.picossa.PicoSerialAdapter.serial_open">
+<em class="property">async </em><code class="sig-name descname">serial_open</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">tx</em>, <em class="sig-param">rx</em>, <em class="sig-param">baud</em>, <em class="sig-param">cts=255</em>, <em class="sig-param">rts=255</em>, <em class="sig-param">data_bits=8</em>, <em class="sig-param">stop_bits=1</em>, <em class="sig-param">parity=0</em>, <em class="sig-param">reply=&lt;Expected.NOW: 1&gt;</em>, <em class="sig-param">flush=True</em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa.PicoSerialAdapter.serial_open" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A <cite>tuple</cite> of the processing status and the accepted baud rate,
+if the status is <code class="xref py py-data docutils literal notranslate"><span class="pre">OKAY</span></code>.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>tuple(<a class="reference internal" href="#gpiosvr.picossa.Status" title="gpiosvr.picossa.Status"><code class="xref py py-class docutils literal notranslate"><span class="pre">Status</span></code></a>, bytes)</p>
 </dd>
 </dl>
 </dd></dl>

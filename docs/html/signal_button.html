@@ -212,7 +212,7 @@ configuration passed in via
 
 <dl class="py class">
 <dt id="signal_button.ButtonProtocolDescription">
-<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonProtocolDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cpuDischargePause_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonProtocolDescription" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">signal_button.</code><code class="sig-name descname">ButtonProtocolDescription</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">codeStartBit</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="n">preamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">postamble_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edgeEvaluationInterval_ms</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debounce_μs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonProtocolDescription" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="signal.html#gpiosvr.signal.SignalProtocolDescription" title="gpiosvr.signal.SignalProtocolDescription"><code class="xref py py-class docutils literal notranslate"><span class="pre">gpiosvr.signal.SignalProtocolDescription</span></code></a></p>
 <dl class="py method">
 <dt id="signal_button.ButtonProtocolDescription.fromConfig">
@@ -246,16 +246,15 @@ configuration passed in via
 <dl class="py method">
 <dt id="signal_button.ButtonPulseEventIterator.onPulseInterruption">
 <em class="property">async </em><code class="sig-name descname">onPulseInterruption</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signal_button.ButtonPulseEventIterator.onPulseInterruption" title="Permalink to this definition">¶</a></dt>
-<dd><p>Internal event callback for extensibility. It is called when the pulse
-sequence has been interrupted, considering the protocol.</p>
+<dd><p>Internal event callback.. It is called when the pulse sequence has
+been interrupted, considering the protocol.</p>
 <p>If the implementation wishes to discard the incomplete pulse sequence,
 it must return <code class="docutils literal notranslate"><span class="pre">True</span></code>.
 If the implementation wishes to append further pulses to the incomplete
 pulse sequence, it must return <code class="docutils literal notranslate"><span class="pre">False</span></code>. This is the default.</p>
 <p>If the implementation whishes to notify coroutines iterating over
-<a class="reference internal" href="signal.html#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instances, it must call
-<code class="docutils literal notranslate"><span class="pre">self.eventQueue.put(PulsesInterrupted())</span></code> and return 
-<code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<a class="reference internal" href="signal.html#gpiosvr.signal.PulseEvent" title="gpiosvr.signal.PulseEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulseEvent</span></code></a> instances, it must put an instance of
+<a class="reference internal" href="signal.html#gpiosvr.signal.PulsesInterrupted" title="gpiosvr.signal.PulsesInterrupted"><code class="xref py py-class docutils literal notranslate"><span class="pre">PulsesInterrupted</span></code></a> into the event queue, then return <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 </dd></dl>
 
 </dd></dl>

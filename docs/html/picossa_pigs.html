@@ -87,6 +87,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">gpiosvr</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="picossa.html">picossa module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">picossa_pigs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classes">Classes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#constants-and-defaults">Constants and defaults</a></li>
 </ul>
 </li>
@@ -165,7 +166,7 @@
 <p>Classes for provding a <cite>pigs</cite> interface on top of <a class="reference internal" href="picossa.html#module-gpiosvr.picossa" title="gpiosvr.picossa"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gpiosvr.picossa</span></code></a>. <cite>pigs</cite>
 refers to the exceutable of the same name of the
 <a class="reference external" href="https://abyz.me.uk/rpi/pigpio/pigs.html">pigpio project</a>.</p>
-<p>With an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">PigsExecutor</span></code>, it is possible to execute commands
+<p>With an instance of <a class="reference internal" href="#gpiosvr.picossa_pigs.PigsExecutor" title="gpiosvr.picossa_pigs.PigsExecutor"><code class="xref py py-class docutils literal notranslate"><span class="pre">PigsExecutor</span></code></a>, it is possible to execute commands
 and scripts like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="mi">12</span> <span class="n">w</span> <span class="n">pud</span> <span class="mi">12</span> <span class="n">o</span> <span class="n">w</span> <span class="mi">12</span> <span class="mi">1</span>
 </pre></div>
@@ -174,11 +175,130 @@ and scripts like:</p>
 to level <cite>1</cite>.</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#constants-and-defaults" id="id1">Constants and defaults</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id1">Classes</a></p></li>
+<li><p><a class="reference internal" href="#constants-and-defaults" id="id2">Constants and defaults</a></p></li>
 </ul>
 </div>
+<div class="section" id="classes">
+<h2><a class="toc-backref" href="#id1">Classes</a><a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="gpiosvr.picossa_pigs.PigsScript">
+<em class="property">class </em><code class="sig-prename descclassname">gpiosvr.picossa_pigs.</code><code class="sig-name descname">PigsScript</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">cancelCheckingInterval_μS</span></em>, <em class="sig-param"><span class="n">uartReadTimeout_ms</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">isStored</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encapsulates a <cite>pigs</cite> script that can be executed at any point in time,
+i.e. instantly as an ad-hoc script or in the scope of stored script
+created with <cite>proc</cite> and executed with <cite>procr</cite>.</p>
+<p>Normally, this class does not have to be instanced manually, as 
+<a class="reference internal" href="#gpiosvr.picossa_pigs.PigsExecutor" title="gpiosvr.picossa_pigs.PigsExecutor"><code class="xref py py-class docutils literal notranslate"><span class="pre">PigsExecutor</span></code></a> provides a high-level API for working with scripts.</p>
+<p>For further reference of the supported <cite>pigs</cite> commands, see
+<a class="reference external" href="https://abyz.me.uk/rpi/pigpio/pigs.html#Scripts">pigpio project</a>.</p>
+<p>Supported <cite>pigs</cite> commands:</p>
+<ul class="simple">
+<li><p><cite>proc</cite> plus other commands for storing a script</p></li>
+<li><p><cite>parse</cite> plus other commands for a mere syntax check</p></li>
+<li><p><cite>r</cite> | <cite>read</cite> for reading a GPIO level</p></li>
+<li><p><cite>w</cite> | <cite>write</cite> for writing an output GPIO level</p></li>
+<li><p><cite>m</cite> | <cite>modes</cite> for setting the mode of a GPIO</p></li>
+<li><p><cite>pud</cite> for setting the internal pull-up/down resistance</p></li>
+<li><p><cite>mics</cite> and <cite>mils</cite> for pausing the script</p></li>
+<li><p><cite>tag</cite> for tagging a specific point in the script</p></li>
+<li><p><cite>jmp</cite>, <cite>jz</cite>, <cite>jnz</cite>, <cite>jm</cite> and <cite>jp</cite> for jumping to a tag under certain 
+conditions</p></li>
+<li><p><cite>dcr</cite> and <cite>inc</cite> for decreasing or increasing a register value, 
+respectively</p></li>
+<li><p><cite>ld</cite> for setting a specific register to a specific value</p></li>
+<li><p><cite>lda</cite> for setting the internal accumulator to a specific value</p></li>
+<li><p><cite>cmp</cite> for comparing the internal accumulator with a specific value</p></li>
+</ul>
+<p>Additional commands not supported by the original <cite>pigs</cite> command:</p>
+<ul class="simple">
+<li><p><cite>uart</cite> for sending bytes via UART and receive bytes in return in a 
+certain time frame</p></li>
+</ul>
+<p>Note that <code class="xref py py-mod docutils literal notranslate"><span class="pre">gpio_server</span></code> might accept additional commands for
+getting and setting server configuration entries.</p>
+<p>A script is considered long-running, if it includes the command <cite>mics</cite>
+and/or <cite>mils</cite>.</p>
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsScript.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loop</span></em>, <em class="sig-param"><span class="n">script</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">cancelCheckingInterval_μS</span></em>, <em class="sig-param"><span class="n">uartReadTimeout_ms</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">isStored</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsScript.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><span class="target" id="gpiosvr.picossa_pigs.PigsScript.params.cancelCheckingInterval_μS"></span><strong>cancelCheckingInterval_μS</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.picossa_pigs.PigsScript.params.cancelCheckingInterval_μS">¶</a> (<em>int</em>) – For a long-running script, the 
+interval in microseconds in which a stop request for the script is
+checked.
+In other terms, the maximum delay after which a stop request is 
+honored.</p></li>
+<li><p><span class="target" id="gpiosvr.picossa_pigs.PigsScript.params.uartReadTimeout_ms"></span><strong>uartReadTimeout_ms</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.picossa_pigs.PigsScript.params.uartReadTimeout_ms">¶</a> (<em>int</em>) – After sending bytes with an <cite>uart</cite> command,
+the maximum time span in milliseconds to receive bytes in response.
+If too low, the bytes returned might be incomplete.
+Defaults to <a class="reference internal" href="#gpiosvr.picossa_pigs.UART_READ_TIMEOUT_DEFAULT_MS" title="gpiosvr.picossa_pigs.UART_READ_TIMEOUT_DEFAULT_MS"><code class="xref py py-data docutils literal notranslate"><span class="pre">UART_READ_TIMEOUT_DEFAULT_MS</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor">
+<em class="property">class </em><code class="sig-prename descclassname">gpiosvr.picossa_pigs.</code><code class="sig-name descname">PigsExecutor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">taskMonitor</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">cancelCheckingInterval_μS</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executor for <cite>pigs</cite> scripts. It also holds stored scripts created with
+the <cite>proc</cite> command.</p>
+<p>See <a class="reference internal" href="#gpiosvr.picossa_pigs.PigsScript" title="gpiosvr.picossa_pigs.PigsScript"><code class="xref py py-class docutils literal notranslate"><span class="pre">PigsScript</span></code></a> for the supported commands.</p>
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">taskMonitor</span></em>, <em class="sig-param"><span class="n">pi</span></em>, <em class="sig-param"><span class="n">cancelCheckingInterval_μS</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">msgBuffer</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><span class="target" id="gpiosvr.picossa_pigs.PigsExecutor.params.cancelCheckingInterval_μS"></span><strong>cancelCheckingInterval_μS</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.picossa_pigs.PigsExecutor.params.cancelCheckingInterval_μS">¶</a> – See 
+<a class="reference internal" href="#gpiosvr.picossa_pigs.PigsScript.params.cancelCheckingInterval_μS" title="gpiosvr.picossa_pigs.PigsScript"><code class="xref py py-paramref docutils literal notranslate"><span class="pre">cancelCheckingInterval_μS</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor.executeProcd">
+<em class="property">async </em><code class="sig-name descname">executeProcd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptStr</span></em>, <em class="sig-param"><span class="n">selectedHandles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor.executeProcd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corresponds to the <cite>procd</cite> command for deleting a stored script.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor.executeProcp">
+<em class="property">async </em><code class="sig-name descname">executeProcp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptStr</span></em>, <em class="sig-param"><span class="n">selectedHandles</span></em>, <em class="sig-param"><span class="n">isSelectedByHandle</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor.executeProcp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corresponds to the <cite>procp</cite> command for showing the status of a stored
+script.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor.executeProcr">
+<em class="property">async </em><code class="sig-name descname">executeProcr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptStr</span></em>, <em class="sig-param"><span class="n">selectedHandles</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">()</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor.executeProcr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corresponds to the <cite>procr</cite> command for running a stored script.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor.executeProcs">
+<em class="property">async </em><code class="sig-name descname">executeProcs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptStr</span></em>, <em class="sig-param"><span class="n">selectedHandles</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor.executeProcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corresponds to the <cite>procs</cite> command for stopping a running script.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="gpiosvr.picossa_pigs.PigsExecutor.executeScript">
+<em class="property">async </em><code class="sig-name descname">executeScript</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scriptStr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#gpiosvr.picossa_pigs.PigsExecutor.executeScript" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes an ad-hoc script or creates a stored script if the first
+command is <cite>proc</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><span class="target" id="gpiosvr.picossa_pigs.PigsExecutor.executeScript.params.scriptStr"></span><strong>scriptStr</strong><a class="paramlink headerlink reference internal" href="#gpiosvr.picossa_pigs.PigsExecutor.executeScript.params.scriptStr">¶</a> (<em>str</em>) – The pigs script to execute.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="constants-and-defaults">
-<h2><a class="toc-backref" href="#id1">Constants and defaults</a><a class="headerlink" href="#constants-and-defaults" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Constants and defaults</a><a class="headerlink" href="#constants-and-defaults" title="Permalink to this headline">¶</a></h2>
 <dl class="py data">
 <dt id="gpiosvr.picossa_pigs.CANCEL_CHECKING_INTERVAL_S_DEFAULT">
 <span id="gpiosvr.picossa_pigs.CANCEL_CHECKING_INTERVAL_μS_DEFAULT"></span><code class="sig-prename descclassname">gpiosvr.picossa_pigs.</code><code class="sig-name descname">CANCEL_CHECKING_INTERVAL_μS_DEFAULT</code><em class="property"> = 1000</em><a class="headerlink" href="#gpiosvr.picossa_pigs.CANCEL_CHECKING_INTERVAL_S_DEFAULT" title="Permalink to this definition">¶</a></dt>
@@ -186,7 +306,7 @@ to level <cite>1</cite>.</p>
 
 <dl class="py data">
 <dt id="gpiosvr.picossa_pigs.UART_READ_TIMEOUT_DEFAULT_MS">
-<code class="sig-prename descclassname">gpiosvr.picossa_pigs.</code><code class="sig-name descname">UART_READ_TIMEOUT_DEFAULT_MS</code><em class="property"> = 500</em><a class="headerlink" href="#gpiosvr.picossa_pigs.UART_READ_TIMEOUT_DEFAULT_MS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">gpiosvr.picossa_pigs.</code><code class="sig-name descname">UART_READ_TIMEOUT_DEFAULT_MS</code><em class="property"> = 100</em><a class="headerlink" href="#gpiosvr.picossa_pigs.UART_READ_TIMEOUT_DEFAULT_MS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
